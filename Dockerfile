@@ -14,7 +14,8 @@ RUN apk add --no-cache \
     jq \
     curl \
     && rm -fr /var/cache/apk/* \
-    && /usr/bin/jdk-download.sh alpine
+    && /usr/bin/jdk-download.sh alpine \
+    && apk add --update docker openrc
 
 ENV PATH=/opt/jdk-${JAVA_VERSION}/bin:$PATH
 
